@@ -14,23 +14,22 @@ const promptMessage = {
     quit: "Quit"
 };
 
-const connection = mysql.createConnection(
-    {
+const connectsql = mysql.createConnection({
         host: 'localhost',
-
-        port: 3006,
-        // MySQL username,
+        port: 3306,
+        // MySQL username
         user: 'root',
-        // TODO: Add MySQL password here
+        //MySQL password
         password: 'root',
-        database: 'employeeTrack_db'
-    },
-    connection.connect(err => {
+        database: 'employeeDB'
+    });
+    connectsql.connect(err => {
         if (err) throw err;
-        prompt();
-    }));
+        firstPrompt();
+    });
+    
 
-function prompt() {
+function firstPrompt() {
     inquirer.prompt({
         name: 'action',
         type: 'list',
@@ -301,3 +300,8 @@ function askName(){
         }
     ]);
 }
+
+// app.listen(PORT, () =>{
+//     console.log(`Serve running on port ${PORT}`);
+
+// });

@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS employeeTrack_db;
-CREATE DATABASE employeeTrack_db;
+DROP DATABASE IF EXISTS employeeDB;
+CREATE DATABASE employeeDB;
 
-USE employeeTrack_db;
+USE employeeDB;
 
 CREATE TABLE department (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
