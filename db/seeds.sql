@@ -1,33 +1,29 @@
-SELECT role.id, role.title, role.salary FROM role ORDER BY role.id;
-SELECT role.id, role.title FROM role ORDER BY role.id;
-SELECT * FROM employee;
-
-SELECT department.id, department.name FROM department ORDER BY department.id;
-
-SELECT department.name AS department, role.title, employee.id, employee.first_name, employee.last_name
-    FROM employee
-    LEFT JOIN role ON (role.id = employee.role_id)
-    LEFT JOIN department ON (department.id = role.department_id)
-    ORDER BY department.name;
+INSERT INTO department (name)
+VALUES
+    ('Engineering'),
+    ('Finance'),
+    ('Legal'),
+    ('Sales');
+INSERT INTO role
+    (title, salary, department_id)
+VALUES
+    ('Sales Lead', 100000, 1),
+    ('Salesperson', 800000, 2),
+    ('Lead Engineer', 150000, 3),
+    ('Software Engineer', 1200000, 4),
+    ('Account Manager', 160000, 5),
+    ('Accountant', 125000, 6),
+    ('Legal Team Lead', 250000, 7),
+    ('Lawyer', 190000, 8),
     
-SELECT CONCAT(manager.first_name, ' ', manager.last_name) AS manager, department.name AS department, employee.id, employee.first_name, employee.last_name, role.title
-  FROM employee
-  LEFT JOIN employee manager on manager.id = employee.manager_id
-  INNER JOIN role ON (role.id = employee.role_id && employee.manager_id != 'NULL')
-  INNER JOIN department ON (department.id = role.department_id)
-  ORDER BY manager;
-  
-SELECT role.title, employee.id, employee.first_name, employee.last_name, department.name AS department
-    FROM employee
-    LEFT JOIN role ON (role.id = employee.role_id)
-    LEFT JOIN department ON (department.id = role.department_id)
-    ORDER BY role.title;
-
-SELECT employee.id, employee.first_name, employee.last_name, role.title, department.name AS department, role.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager
-  FROM employee
-  LEFT JOIN employee manager on manager.id = employee.manager_id
-  INNER JOIN role ON (role.id = employee.role_id)
-  INNER JOIN department ON (department.id = role.department_id)
-  ORDER BY employee.id;
-  
-SELECT first_name, last_name, role_id FROM employee WHERE employee.id = 4;
+INSERT INTO employee
+    (first_name, last_name, role_id, manager_id)
+VALUES
+    ('Christen', 'Lorber', 1, NULL),
+    ('Pesto', 'Pie', 2, 1),
+    ('Sully', 'Sanchez', 3, 2),
+    ('SeaEra', 'Bear', 4, NULL),
+    ('Elli', 'Fratellis', 5, 4),
+    ('LunaBug', 'Marie', 6, null),
+    ('Cosmo', 'Kay', 7, 6),
+    

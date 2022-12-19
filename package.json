@@ -11,6 +11,7 @@
     "license": "ISC",
     "dependencies": {
         "console.table": "^0.10.0",
+        "dotenv": "^16.0.3",
         "inquirer": "^7.3.3",
         "mysql2": "^2.3.3"
     }
