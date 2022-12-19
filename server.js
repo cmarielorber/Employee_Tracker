@@ -14,19 +14,19 @@ const promptMessage = {
     quit: "Quit"
 };
 
-const connectsql = mysql.createConnection({
-        host: 'localhost',
-        port: 3306,
-        // MySQL username
-        user: 'root',
-        //MySQL password
-        password: 'root',
-        database: 'employeeDB'
-    });
-    connectsql.connect(err => {
-        if (err) throw err;
-        firstPrompt();
-    });
+const connection = mysql.createConnection({
+  host: 'localhost',
+  // Your username
+  user: 'root',
+  // Your password
+  password: 'root',
+  database: 'employeeDB'
+});
+connection.connect(function (err) {
+  if (err) throw err;
+  firstPrompt();
+});
+
     
 
 function firstPrompt() {
@@ -300,6 +300,8 @@ function askName(){
         }
     ]);
 }
+
+module.exports = connection;
 
 // app.listen(PORT, () =>{
 //     console.log(`Serve running on port ${PORT}`);
