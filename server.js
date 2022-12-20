@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
-require('console.table');
+const consoleTable = require('console.table');
 require('dotenv').config();
 
 const connection = mysql.createConnection(
@@ -9,7 +9,6 @@ const connection = mysql.createConnection(
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
         host: 'localhost',
-        dialect: "mysql",
         port: 3306
     }
 );
@@ -81,6 +80,11 @@ startApp = () => {
                 break;
         }
     });
+inquirer.prompt([
+    {type: 'list', message: 'whats your name', name: 'username', choices: ['dog','cat','fish']}
+]).then((res)=>{
+    console.log('here is your username', res.username)
+})
 }
 
 viewAllEmployees = () => {
