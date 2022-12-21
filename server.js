@@ -388,7 +388,7 @@ const removeEmployee = () => {
 }
 
 const viewDepartmentSalary = () => {
-    connection.query(`SELECT * FROM department ORDER BY department_id ASC;`, (err, res) => {
+    connection.query(`SELECT * FROM department ORDER BY id ASC;`, (err, res) => {
         if (err) throw err;
         let departments = res.map(department => ({ name: department.name, value: department.id }));
         inquirer.prompt([
@@ -407,7 +407,7 @@ const viewDepartmentSalary = () => {
                 ],
                 (err, res) => {
                     if (err) throw err;
-                    console.log(`\n The total utilized salary budget of the ${res.deptName} department is $ \n`);
+                    console.log(`\n The total utilized salary budget is below. \n`);
                     console.table('\n', res, '\n');
                     startApp();
                 })
