@@ -1,7 +1,7 @@
 # MySQL-Employee-Tracker
 <p>
   <img src="https://img.shields.io/badge/-JavaScript-yellow" />
-  <img src="https://img.shields.io/badge/-MySQL-red" />
+  <img src="https://img.shields.io/badge/-MySQL2-red" />
   <img src="https://img.shields.io/badge/-JSON-blue" />
   <img src="https://img.shields.io/badge/-Node-green" />
 </p>
