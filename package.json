@@ -1,7 +1,7 @@
 {
     "name": "employee-tracker",
     "version": "1.0.0",
-    "description": "CLI to add, track, and delete employees ina a database.",
+    "description": "CLI to add, track, and delete employees in a database.",
     "main": "tracker.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
