@@ -20,7 +20,7 @@ MySQL Employee Tracker is an interface command program that makes it easy for no
 
 ## Demo
 
-[MySQL Employee Tracker Demo](PUT LINK HERE)
+[MySQL Employee Tracker Demo](https://drive.google.com/file/d/1mDZLmuI_UPRvkUpG58w025JyVpyVn95x/view?usp=share_link)
 
 ## Installation
 First clone the repository then run the following commands to install dependency packages:
