@@ -149,7 +149,6 @@ const addDepartment = () => {
 const addEmployee = () => {
     connection.query(`SELECT * FROM role`, (err, res) => {
         if (err) throw err;
-        console.log(res)
         let roles = res.map(role => ({ name: role.title, value: role.id }));
         connection.query(`SELECT * FROM employee`, (err, res) => {
             if (err) throw err;
